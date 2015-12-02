@@ -1,5 +1,5 @@
-function Model = trainFisherwKernel(data,label,epsilon,kernel)
-    if nargin < 3
+function Model = trainFisherwKernel(data,label,kernel,epsilon)
+    if nargin < 4
         epsilon = 0.001;    
     end
     
@@ -14,7 +14,7 @@ function Model = trainFisherwKernel(data,label,epsilon,kernel)
     	ki = kmatrix(:,label == i);
     	li = size(ki,2);
     	Mi = sum(ki,2);
-    	M = M + (Mi-M) * (Mi-M)';
+    	M = M + (Mi-Ms) * (Mi-Ms)';
     	N = N + ki * (eye(li)-ones(li)./li) * ki';
     end
     N = N + epsilon*eye(size(N));

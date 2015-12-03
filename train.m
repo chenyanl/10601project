@@ -4,6 +4,8 @@ function [Model] = train(X,Y)
         data = [data;naivehog(reshape(X(i,:),[32,32,3]))'];
         %disp(i);
     end
-    Model = trainFisherwKernel(data,Y,@rbf);
+    
+    Model = trainFisherwKernel(data,Y,@poly2);
+    %Model = trainFisher(data,Y);
 end
 

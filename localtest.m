@@ -20,9 +20,9 @@ for i = 1 : 5
     end
     testdata = A(i).data;
     testlabels = A(i).labels;
-    Model = train(traindata,trainlabels);
+    Model = train2(traindata,trainlabels);
     disp(['Testing Batch ',num2str(i)]);
-    resultlabels = classify(Model,testdata);
+    resultlabels = classify2(Model,testdata);
     disp(['Accuracy is ', num2str(sum(resultlabels == testlabels) / 1000)]);
     accuracy = accuracy + sum(resultlabels == testlabels);
 end

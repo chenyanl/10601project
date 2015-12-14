@@ -1,4 +1,4 @@
-function Y = classify(X,Model)
+function Y = classify1(X,Model)
 	if nargin < 2
 		load('Model.mat','Model');
 	end

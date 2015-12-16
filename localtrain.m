@@ -8,5 +8,5 @@ for i = 1 : 5
     traindata = [traindata;A.data];
     trainlabels = [trainlabels;A.labels];
 end
-Model = train1(traindata,trainlabels);
+Model = train2(traindata,trainlabels);
 save('Model.mat','Model');

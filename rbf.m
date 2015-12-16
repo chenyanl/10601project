@@ -3,4 +3,3 @@ function [K] = rbf(data1,data2)
     K = K .* -0.5;
     K = exp(K);
 end
-
